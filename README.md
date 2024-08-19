@@ -1,4 +1,4 @@
-# decentralised-Energy-System-Model_Business-Park
+# Decentralised-Energy-System-Model_Business-Park
 
 This repository contains the energy system model for the **Uitgeest Noord** project, developed using the [Calliope](https://calliope.readthedocs.io/en/stable/) modeling framework. The model simulates energy production, storage, and consumption in a specified region, with a focus on different technology configurations, scenarios, and optimization strategies.
 
