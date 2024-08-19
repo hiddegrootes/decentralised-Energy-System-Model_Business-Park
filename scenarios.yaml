@@ -1,0 +1,217 @@
+scenarios:
+  Current_scenario: ["Current_capacity_installed","Full_year_2019_2020"]
+  Solution_mix_1: ["Solution_mix_1_installed", "Full_year_2019_2020"]
+  Solution_mix_2: ["Solution_mix_2_installed", "Full_year_2019_2020"]
+  Solution_mix_3_A: ["Solution_mix_3_A_installed", "Full_year_2019_2020"]
+  Solution_mix_3_B: ["Solution_mix_3_B_installed", "summer_week"]
+  Cost_storage_cap_S1: ["Solution_mix_3_B_installed", "cost_per_storage_cap_S1_installed", "Full_year_2019_2020"]
+  Cost_storage_cap_S2: ["Solution_mix_3_B_installed", "cost_per_storage_cap_S2_installed", "Full_year_2019_2020"]
+  Cost_storage_cap_S3: ["Solution_mix_3_B_installed", "cost_per_storage_cap_S3_installed", "Full_year_2019_2020"]
+  Cost_storage_cap_S3_300: ["Solution_mix_3_B_installed", "cost_per_storage_cap_S3_300_installed", "Full_year_2019_2020"] 
+  Cost_storage_cap_S4: ["Solution_mix_3_B_installed", "cost_per_storage_cap_S4_installed", "Full_year_2019_2020"] 
+  Battery_limit_S1: ["Solution_mix_3_B_installed", "Battery_limit_S1_installed","Full_year_2019_2020"]
+  Battery_limit_S2: ["Solution_mix_3_B_installed", "Battery_limit_S2_installed","Full_year_2019_2020"]
+  Battery_limit_S3: ["Solution_mix_3_B_installed", "Battery_limit_S3_installed", "Full_year_2019_2020"]
+  Battery_limit_S4: ["Solution_mix_3_B_installed", "Battery_limit_S4_installed", "Full_year_2019_2020"]
+  Expansion_demand_1_25x: ["Battery_limit_S4_installed", "Expansion_demand_1_25x_installed","Full_year_2019_2020"]
+  Expansion_demand_1_5x: ["Battery_limit_S4_installed", "Expansion_demand_1_5x_installed","Full_year_2019_2020"]
+  Expansion_demand_1_75x: ["Battery_limit_S4_installed", "Expansion_demand_1_75x_installed","Full_year_2019_2020"]
+  PV_capacity_25: ["Battery_limit_S4_installed", "Solution_mix_3_B_installed", "PV_capacity_25_installed", "Full_year_2019_2020"]
+  PV_capacity_50: ["Battery_limit_S4_installed", "Solution_mix_3_B_installed", "PV_capacity_50_installed", "Full_year_2019_2020"]
+  PV_capacity_75: ["Battery_limit_S4_installed", "Solution_mix_3_B_installed", "PV_capacity_75_installed", "Full_year_2019_2020"]
+  Low_cost_0_5x: ["Battery_limit_S4_installed", "Solution_mix_3_B_installed", "Low_cost_0_5x_installed", "Full_year_2019_2020"]
+  Low_cost_0_7x: ["Battery_limit_S4_installed", "Solution_mix_3_B_installed", "Low_cost_0_7x_installed", "Full_year_2019_2020"]
+  Low_cost_0_9x: ["Battery_limit_S4_installed", "Solution_mix_3_B_installed", "Low_cost_0_9x_installed", "Full_year_2019_2020"]
+  High_cost_1_5x: ["Battery_limit_S4_installed", "Solution_mix_3_B_installed", "High_cost_1_5x_installed", "Full_year_2019_2020"]
+  High_cost_2_0x: ["Battery_limit_S4_installed", "Solution_mix_3_B_installed", "High_cost_2_0x_installed", "Full_year_2019_2020"]
+  High_cost_2_5x: ["Battery_limit_S4_installed", "Solution_mix_3_B_installed", "High_cost_2_5x_installed", "Full_year_2019_2020"]
+  Cost_storage_cap_S1_nogrid_sink: ["no_demand_grid_sink","Solution_mix_3_B_installed", "cost_per_storage_cap_S1_installed", "Full_year_2019_2020"]
+  Cost_storage_cap_S2_nogrid_sink: ["no_demand_grid_sink", "Solution_mix_3_B_installed", "cost_per_storage_cap_S2_installed", "Full_year_2019_2020"]
+  Cost_storage_cap_S3_nogrid_sink: ["no_demand_grid_sink","Solution_mix_3_B_installed", "cost_per_storage_cap_S3_installed", "Full_year_2019_2020"] 
+  Cost_storage_cap_S3_300_nogrid_sink: ["no_demand_grid_sink", "Solution_mix_3_B_installed", "cost_per_storage_cap_S3_300_installed", "Full_year_2019_2020"] 
+  Cost_storage_cap_S4_nogrid_sink: ["no_demand_grid_sink", "Solution_mix_3_B_installed", "cost_per_storage_cap_S4_installed", "Full_year_2019_2020"] 
+  Battery_limit_S1_nogrid_sink: ["no_demand_grid_sink", "Solution_mix_3_B_installed", "Battery_limit_S1_installed","Full_year_2019_2020"]
+  Battery_limit_S2_nogrid_sink: ["no_demand_grid_sink", "Solution_mix_3_B_installed", "Battery_limit_S2_installed","Full_year_2019_2020"]
+  Battery_limit_S3_nogrid_sink: ["no_demand_grid_sink", "Solution_mix_3_B_installed", "Battery_limit_S3_installed", "Full_year_2019_2020"]
+  Battery_limit_S4_nogrid_sink: ["no_demand_grid_sink", "Solution_mix_3_B_installed", "Battery_limit_S4_installed", "Full_year_2019_2020"]
+  Expansion_demand_1_25x_nogrid_sink: ["no_demand_grid_sink", "Battery_limit_S4_installed", "Expansion_demand_1_25x_installed","Full_year_2019_2020"]
+  Expansion_demand_1_5x_nogrid_sink: ["no_demand_grid_sink", "Battery_limit_S4_installed", "Expansion_demand_1_5x_installed","Full_year_2019_2020"]
+  Expansion_demand_1_75x_nogrid_sink: ["no_demand_grid_sink", "Battery_limit_S4_installed", "Expansion_demand_1_75x_installed","Full_year_2019_2020"]
+  PV_capacity_25_nogrid_sink: ["no_demand_grid_sink", "Battery_limit_S4_installed", "Solution_mix_3_B_installed", "PV_capacity_25_installed", "Full_year_2019_2020"]
+  PV_capacity_50_nogrid_sink: ["no_demand_grid_sink", "Battery_limit_S4_installed", "Solution_mix_3_B_installed", "PV_capacity_50_installed", "Full_year_2019_2020"]
+  PV_capacity_75_nogrid_sink: ["no_demand_grid_sink", "Battery_limit_S4_installed", "Solution_mix_3_B_installed", "PV_capacity_75_installed", "Full_year_2019_2020"]
+  Low_cost_0_5x_nogrid_sink: ["no_demand_grid_sink", "Battery_limit_S4_installed", "Solution_mix_3_B_installed", "Low_cost_0_5x_installed", "Full_year_2019_2020"]
+  Low_cost_0_7x_nogrid_sink: ["no_demand_grid_sink", "Battery_limit_S4_installed", "Solution_mix_3_B_installed", "Low_cost_0_7x_installed", "Full_year_2019_2020"]
+  Low_cost_0_9x_nogrid_sink: ["no_demand_grid_sink", "Battery_limit_S4_installed", "Solution_mix_3_B_installed", "Low_cost_0_9x_installed", "Full_year_2019_2020"]
+  High_cost_1_5x_nogrid_sink: ["no_demand_grid_sink", "Battery_limit_S4_installed", "Solution_mix_3_B_installed", "High_cost_1_5x_installed", "Full_year_2019_2020"]
+  High_cost_2_0x_nogrid_sink: ["no_demand_grid_sink", "Battery_limit_S4_installed", "Solution_mix_3_B_installed", "High_cost_2_0x_installed", "Full_year_2019_2020"]
+  High_cost_2_5x_nogrid_sink: ["no_demand_grid_sink", "Battery_limit_S4_installed", "Solution_mix_3_B_installed", "High_cost_2_5x_installed", "Full_year_2019_2020"]
+
+overrides:
+  Current_capacity_installed: 
+    nodes.Amp_125.techs.pv.active: false
+    nodes.Amp_160.techs.pv.active: false
+    nodes.Amp_250.techs.pv.active: false
+    nodes.Amp_400.techs.pv.active: false
+    nodes.VD_Lem.techs.pv.active: false
+    nodes.kVA_630.techs.pv.active: false
+    nodes.Amp_25.techs.pv.active: false
+    nodes.Amp_35.techs.pv.active: false
+    nodes.Amp_50.techs.pv.active: false
+    nodes.Amp_63.techs.pv.active: false
+    nodes.Amp_80.techs.pv.active: false
+    nodes.Amp_125.techs.battery.active: false
+    nodes.Amp_160.techs.battery.active: false
+    nodes.Amp_250.techs.battery.active: false
+    nodes.Amp_400.techs.battery.active: false
+    nodes.VD_Lem.techs.battery.active: false
+    nodes.kVA_630.techs.battery.active: false
+    nodes.Amp_25.techs.battery.active: false
+    nodes.Amp_35.techs.battery.active: false
+    nodes.Amp_50.techs.battery.active: false
+    nodes.Amp_63.techs.battery.active: false
+    nodes.Amp_80.techs.battery.active: false
+    nodes.EV_charger.techs.demand_mobility.active: false
+    data_sources.export_power_grid_sink.source: data_sources/export_price_power_current_zero.csv
+    node_groups.standard_tech_list_E3C.techs.demand_heatpump_E3C.active: false
+    node_groups.standard_tech_list_E3B.techs.demand_heatpump_E3B.active: false
+    node_groups.standard_tech_list_E1A.techs.demand_heatpump_E1A.active: false
+    node_groups.standard_tech_list_E2A.techs.demand_heatpump_E2A.active: false
+  Solution_mix_1_installed: 
+    techs.pv.cost_source_cap: 0
+    techs.battery.active: false
+    nodes.grid_sink.techs.demand_grid_sink.active: false
+    data_sources.export_power_grid_sink.source: data_sources/export_price_power_current_zero.csv
+    data_sources.demand_heat.source: data_sources/2040/demand_heat_2040.csv
+  Solution_mix_2_installed:
+    techs.pv.cost_source_cap: 0
+    techs.battery.cost_storage_cap: 0
+    nodes.grid_sink.techs.demand_grid_sink.active: false
+    data_sources.export_power_grid_sink.source: data_sources/export_price_power_current_zero.csv
+    data_sources.demand_heat.source: data_sources/2040/demand_heat_2040.csv
+    data_sources.demand_electric.source: data_sources/2040/demand_power_2040.csv
+  Solution_mix_3_A_installed:
+    techs.pv.cost_source_cap: 0
+    techs.battery.cost_storage_cap: 0
+    data_sources.demand_heat.source: data_sources/2040/demand_heat_2040.csv
+    data_sources.demand_electric.source: data_sources/2040/demand_power_2040.csv
+  Solution_mix_3_B_installed:
+    data_sources.demand_heat.source: data_sources/2040/demand_heat_2040.csv
+    data_sources.demand_electric.source: data_sources/2040/demand_power_2040.csv
+  cost_per_storage_cap_S1_installed:
+    techs.battery.cost_storage_cap.data: [1, 100]
+  cost_per_storage_cap_S2_installed:
+    techs.battery.cost_storage_cap.data: [100, 100]
+  cost_per_storage_cap_S3_installed:
+    techs.battery.cost_storage_cap.data: [200, 100]
+  cost_per_storage_cap_S3_300_installed:
+    techs.battery.cost_storage_cap.data: [300, 100]
+  cost_per_storage_cap_S4_installed:
+    techs.battery.cost_storage_cap.data: [400, 100]
+  Battery_limit_S1_installed:
+    techs.battery.storage_cap_max: 125
+    techs.battery.cost_storage_cap.data: [200, 100]
+  Battery_limit_S2_installed:
+    techs.battery.storage_cap_max: 500
+    techs.battery.cost_storage_cap.data: [200, 100]
+  Battery_limit_S3_installed:
+    techs.battery.storage_cap_max: 1000
+    techs.battery.cost_storage_cap.data: [200, 100]
+  Battery_limit_S4_installed:
+    nodes.Amp_125.techs.battery.storage_cap_min: 1250 
+    nodes.Amp_160.techs.battery.storage_cap_min: 250 
+    nodes.Amp_250.techs.battery.storage_cap_min: 3000
+    nodes.Amp_250.techs.battery.storage_cap_max: 3000
+    nodes.Amp_400.techs.battery.storage_cap_min: 250
+    nodes.VD_Lem.techs.battery.storage_cap_min: 750 
+    nodes.kVA_630.techs.battery.storage_cap_min: 625  
+    nodes.Amp_25.techs.battery.storage_cap_min: 125
+    nodes.Amp_35.techs.battery.storage_cap_min: 250 
+    nodes.Amp_50.techs.battery.storage_cap_min: 250
+    nodes.Amp_63.techs.battery.storage_cap_min: 500
+    nodes.Amp_80.techs.battery.storage_cap_min: 2000
+    nodes.Amp_80.techs.battery.storage_cap_max: 2000
+    techs.battery.cost_storage_cap.data: [200, 100]
+  Expansion_demand_1_25x_installed: 
+    data_sources.demand_heat.source: data_sources/2040/demand_heat_2040.csv
+    data_sources.demand_electric.source: data_sources/01_Expansion_demand/1_25xdemand_power_2040.csv
+  Expansion_demand_1_5x_installed: 
+    data_sources.demand_heat.source: data_sources/2040/demand_heat_2040.csv
+    data_sources.demand_electric.source: data_sources/01_Expansion_demand/1_5xdemand_power_2040.csv
+  Expansion_demand_1_75x_installed: 
+    data_sources.demand_heat.source: data_sources/2040/demand_heat_2040.csv
+    data_sources.demand_electric.source: data_sources/01_Expansion_demand/1_75xdemand_power_2040.csv
+  PV_capacity_25_installed: 
+    nodes.Amp_125.techs.pv.flow_cap_max: 88.5  
+    nodes.Amp_160.techs.pv.flow_cap_max: 20.0  
+    nodes.Amp_250.techs.pv.flow_cap_max: 403.0 
+    nodes.Amp_400.techs.pv.flow_cap_max: 36.75 
+    nodes.VD_Lem.techs.pv.flow_cap_max: 184.0 
+    nodes.kVA_630.techs.pv.flow_cap_max: 139.0  
+    nodes.Amp_25.techs.pv.flow_cap_max: 28.75
+    nodes.Amp_35.techs.pv.flow_cap_max: 45.25 
+    nodes.Amp_50.techs.pv.flow_cap_max: 31.25
+    nodes.Amp_63.techs.pv.flow_cap_max: 70.25
+    nodes.Amp_80.techs.pv.flow_cap_max: 223.0
+  PV_capacity_50_installed: 
+    nodes.Amp_125.techs.pv.flow_cap_max: 177.0
+    nodes.Amp_160.techs.pv.flow_cap_max: 40.0
+    nodes.Amp_250.techs.pv.flow_cap_max: 806.0
+    nodes.Amp_400.techs.pv.flow_cap_max: 73.5
+    nodes.VD_Lem.techs.pv.flow_cap_max: 368.0
+    nodes.kVA_630.techs.pv.flow_cap_max: 278.0
+    nodes.Amp_25.techs.pv.flow_cap_max: 57.5
+    nodes.Amp_35.techs.pv.flow_cap_max: 90.5
+    nodes.Amp_50.techs.pv.flow_cap_max: 62.5
+    nodes.Amp_63.techs.pv.flow_cap_max: 140.5
+    nodes.Amp_80.techs.pv.flow_cap_max: 446.0
+  PV_capacity_75_installed:
+    nodes.Amp_125.techs.pv.flow_cap_max: 265.5
+    nodes.Amp_160.techs.pv.flow_cap_max: 60.0
+    nodes.Amp_250.techs.pv.flow_cap_max: 1209.0
+    nodes.Amp_400.techs.pv.flow_cap_max: 110.25
+    nodes.VD_Lem.techs.pv.flow_cap_max: 552.0
+    nodes.kVA_630.techs.pv.flow_cap_max: 417.0
+    nodes.Amp_25.techs.pv.flow_cap_max: 86.25
+    nodes.Amp_35.techs.pv.flow_cap_max: 135.75
+    nodes.Amp_50.techs.pv.flow_cap_max: 93.75
+    nodes.Amp_63.techs.pv.flow_cap_max: 210.75
+    nodes.Amp_80.techs.pv.flow_cap_max: 669.0
+  Low_cost_0_5x_installed:
+    data_sources.export_power_grid_sink.source: data_sources/02_Low Cost/0_5x_export_price_power_current_2020.csv
+    data_sources.supply_grid_prices.source: data_sources/02_Low Cost/0_5x_supply_grid_prices.csv
+  Low_cost_0_7x_installed:
+    data_sources.export_power_grid_sink.source: data_sources/02_Low Cost/0_7x_export_price_power_current_2020.csv
+    data_sources.supply_grid_prices.source: data_sources/02_Low Cost/0_7x_supply_grid_prices.csv
+  Low_cost_0_9x_installed: 
+    data_sources.export_power_grid_sink.source: data_sources/02_Low Cost/0_9x_export_price_power_current_2020.csv
+    data_sources.supply_grid_prices.source: data_sources/02_Low Cost/0_9x_supply_grid_prices.csv
+  High_cost_1_5x_installed:
+    data_sources.export_power_grid_sink.source: data_sources/03_High Cost/1_5x_export_price_power_current_2020.csv
+    data_sources.supply_grid_prices.source: data_sources/03_High Cost/1_5x_supply_grid_prices.csv
+  High_cost_2_0x_installed:
+    data_sources.export_power_grid_sink.source: data_sources/03_High Cost/2x_export_price_power_current_2020.csv
+    data_sources.supply_grid_prices.source: data_sources/03_High Cost/2x_supply_grid_prices.csv
+  High_cost_2_5x_installed:
+    data_sources.export_power_grid_sink.source: data_sources/03_High Cost/2_5x_export_price_power_current_2020.csv
+    data_sources.supply_grid_prices.source: data_sources/03_High Cost/2_5x_supply_grid_prices.csv
+  Autumn:
+    config.init.time_subset: ['2019-09-01', '2019-11-30']
+  Winter:
+    config.init.time_subset: ['2019-12-01', '2020-02-28']
+  Spring:
+    config.init.time_subset: ['2020-03-01', '2020-05-31']
+  Summer:
+    config.init.time_subset: ['2020-06-01', '2020-08-31']
+  Full_year_2019_2020:
+    config.init.time_subset: ['2019-09-01', '2020-08-31']
+  Spring_week:
+    config.init.time_subset: ['2020-04-13', '2020-04-19']
+  summer_week:
+    config.init.time_subset: ['2020-07-27', '2020-08-02']
+  autumn_week:
+    config.init.time_subset: ['2019-10-14', '2019-10-20']
+  winter_week:
+    config.init.time_subset: ['2020-01-13', '2020-01-19']
+  no_demand_grid_sink:
+    techs.demand_grid_sink.flow_cap_max: 0

@@ -1,0 +1,358 @@
+##
+# TECHNOLOGY DEFINITIONS
+##
+tech_groups:
+  interest_rate_setter:
+    cost_interest_rate:
+      data: 0.05
+      index: monetary
+      dims: costs
+  power_lines:
+    name: "Electrical power distribution"
+    color: "#6783E3"
+    base_tech: transmission
+    inherit: interest_rate_setter
+    carrier_in: electricity
+    carrier_out: electricity
+    flow_out_eff: 0.98
+    lifetime: 25
+    cost_flow_cap_per_distance:
+      data: 0.01
+      index: monetary
+      dims: costs
+  heat_pipes:
+    name: "District heat distribution"
+    color: "#823739"
+    base_tech: transmission
+    carrier_in: heat
+    carrier_out: heat 
+    flow_cap_max: .inf
+    flow_out_eff_per_distance: 0.975
+    lifetime: 50
+    cost_flow_cap_per_distance:
+      data: 0.3
+      index: monetary
+      dims: costs
+    
+techs:
+  ##SUPPLY-#
+  supply_grid_power:
+    name: "National grid import"
+    color: "#8734e9"
+    base_tech: supply
+    inherit: interest_rate_setter
+    carrier_out: electricity
+    source_use_max: .inf
+    flow_cap_max: 1252
+    lifetime: 25
+    cost_flow_out:
+      data: 0.37
+      index: co2_emissions
+      dims: costs
+  supply_gas:
+    name: "Natural gas import"
+    color: "#C98AAD"
+    base_tech: supply
+    inherit: interest_rate_setter
+    carrier_out: gas
+    source_use_max: .inf
+    flow_cap_max: 2000
+    lifetime: 25
+    cost_flow_cap:
+      data: 1
+      index: monetary
+      dims: costs
+    cost_flow_in:
+      data: 0.025 # 2.5p/kWh gas price #ppt
+      index: monetary
+      dims: costs
+    cost_flow_out:
+      data: 0.18
+      index: co2_emissions
+      dims: costs
+  costly_supply:
+    name: "Costly supply"
+    base_tech: supply
+    carrier_out: electricity
+    flow_cap_max: .inf
+    cost_flow_out:
+      data: 100
+      index: monetary
+      dims: costs
+    
+  ##Renewables - Supply##
+  pv:
+    name: "Solar photovoltaic power"
+    color: "#ff7a07"
+    base_tech: supply
+    carrier_out: electricity
+    inherit: interest_rate_setter
+    source_unit: per_cap
+    flow_out_parasitic_eff: 0.85 #inverter losses
+    flow_cap_max_systemwide: 5080
+    lifetime: 25
+    cost_source_cap:
+      data: 1150
+      index: monetary
+      dims: costs
+    cost_flow_out:
+      data: 0.041
+      index: co2_emissions
+      dims: costs
+
+  ##-STORAGE-##     
+  battery:
+    name: 'Battery storage'
+    color: "#765a32"
+    base_tech: storage
+    inherit: interest_rate_setter
+    carrier_in: electricity
+    carrier_out: electricity
+    flow_cap_max: .inf
+    storage_cap_max: .inf
+    storage_discharge_depth: 0.01
+    lifetime: 15  #8000 laadcycli
+    flow_cap_per_storage_cap_max: 0.25
+    flow_out_eff: 0.95
+    flow_in_eff: 0.95
+    storage_loss: 0.01  #1% loss per hour time assumed
+    cost_storage_cap:
+      data: [400, 100]
+      index: [monetary, co2_emissions]
+      dims: costs
+      
+##Conversion##
+  boiler:
+    name: "Natural gas boiler"
+    color: "#8E2999"
+    base_tech: conversion
+    inherit: interest_rate_setter
+    carrier_in: gas
+    carrier_out: heat
+    flow_cap_max:
+      data: .inf
+      index: heat
+      dims: carriers
+    flow_out_eff: 0.85
+    lifetime: 25
+    cost_flow_in:
+      data: 0.004 # .4p/kWh
+      index: monetary
+      dims: costs
+      
+  ##-DEMAND-##
+  demand_electricity_E3B:
+    name: "Electrical demand"
+    color: "#bdf5c6"
+    base_tech: demand
+    carrier_in: electricity
+  demand_electricity_E3C:
+    name: "Electrical demand"
+    color: "#4fd965"
+    base_tech: demand
+    carrier_in: electricity
+  demand_electricity_E1A:
+    name: "Electrical demand"
+    color: "#1a9f30"
+    base_tech: demand
+    carrier_in: electricity
+  demand_electricity_E2A:
+    name: "Electrical demand"
+    color: "#186326"
+    base_tech: demand
+    carrier_in: electricity
+  demand_mobility:
+    name: "EV demand"
+    color: "#545eff"
+    base_tech: demand
+    carrier_in: electricity
+  demand_heatpump_E3B:
+    name: "Heat demand"
+    color: "#fbcdcd"
+    base_tech: demand
+    carrier_in: electricity
+  demand_heatpump_E3C:
+    name: "Heat demand"
+    color: "#f8a9a9"
+    base_tech: demand
+    carrier_in: electricity
+  demand_heatpump_E1A:
+    name: "Heat demand"
+    color: "#e64d4d"
+    base_tech: demand
+    carrier_in: electricity
+  demand_heatpump_E2A:
+    name: "Heat demand"
+    color: "#d32f2f"
+    base_tech: demand
+    carrier_in: electricity
+  demand_heat_G1A:
+    name: "Heat demand"
+    color: "#f8ebdc"
+    base_tech: demand
+    carrier_in: heat
+  demand_heat_G2A:
+    name: "Heat demand"
+    color: "#f8ebdc"
+    base_tech: demand
+    carrier_in: heat
+  demand_heat_G2C:
+    name: "Heat demand"
+    color: "#f8ebdc"
+    base_tech: demand
+    carrier_in: heat
+  demand_grid_sink:
+    name: "Grid Sink"
+    color: "#eb1b0c"
+    base_tech: demand
+    carrier_in: electricity
+    flow_cap_max: .inf
+
+  ##-TRANSMISSION-##
+  Grid_sink_to_Outside_connection:
+    from: grid_sink
+    to: outside_connection
+    inherit: power_lines
+    distance: 10
+  Outside_connection_to_N1:
+    from: outside_connection
+    to: N1
+    inherit: power_lines
+    distance: 10
+  N1_to_EV_charger:
+    from: N1
+    to: EV_charger
+    inherit: power_lines
+    distance: 10
+  N1_to_N2:
+    from: N1
+    to: N2
+    inherit: power_lines
+    distance: 10
+    flow_cap_max: 1252    
+  N2_to_Amp_125:
+    from: N2
+    to: Amp_125
+    flow_cap_max: 65
+    inherit: power_lines
+    distance: 600
+  N2_to_Amp_160:
+    from: N2
+    to: Amp_160
+    flow_cap_max: 28
+    inherit: power_lines
+    distance: 600
+  N2_to_Amp_250:
+    from: N2
+    to: Amp_250
+    inherit: power_lines
+    flow_cap_max: 28
+    distance: 600
+  N2_to_Amp_400:
+    from: N2
+    to: Amp_400
+    inherit: power_lines
+    flow_cap_max: 69
+    distance: 600
+  N2_to_VD_lem:
+    from: N2
+    to: VD_Lem
+    inherit: power_lines
+    flow_cap_max: 402
+    distance: 600
+  N2_to_kVA_630:
+    from: N2
+    to: kVA_630
+    inherit: power_lines
+    flow_cap_max: 402
+    distance: 600
+  N2_to_Amp_25:
+    from: N2
+    to: Amp_25
+    inherit: power_lines
+    flow_cap_max: 56
+    distance: 600
+  N2_to_Amp_35:
+    from: N2
+    to: Amp_35
+    inherit: power_lines
+    flow_cap_max: 78
+    distance: 600
+  N2_to_Amp_50:
+    from: N2
+    to: Amp_50
+    inherit: power_lines
+    flow_cap_max: 52
+    distance: 10
+  N2_to_Amp_63:
+    from: N2
+    to: Amp_63
+    inherit: power_lines
+    flow_cap_max: 120
+    distance: 600
+  N2_to_Amp_80:
+    from: N2
+    to: Amp_80
+    inherit: power_lines
+    flow_cap_max: 124
+    distance: 600
+  Outside_connection_to_N3:
+    from: outside_connection
+    to: N3
+    inherit: heat_pipes
+    distance: 20
+  N3_to_Amp_80:
+    from: N2
+    to: Amp_80
+    inherit: heat_pipes
+    distance: 150
+  Amp_80_to_Amp_63:
+    from: Amp_80
+    to: Amp_63
+    inherit: heat_pipes
+    distance: 150
+  Amp_63_to_Amp_50:
+    from: Amp_63
+    to: Amp_50
+    inherit: heat_pipes
+    distance: 150
+  Amp_50_to_Amp_35:
+    from: Amp_50
+    to: Amp_35
+    inherit: heat_pipes
+    distance: 150
+  Amp_35_to_Amp_25:
+    from: Amp_35
+    to: Amp_25
+    inherit: heat_pipes
+    distance: 150
+  Amp_25_to_Amp_125:
+    from: Amp_25
+    to: Amp_125
+    inherit: heat_pipes
+    distance: 150
+  Amp_125_to_Amp_160:
+    from: Amp_125
+    to: Amp_160
+    inherit: heat_pipes
+    distance: 150
+  Amp_160_to_Amp_250:
+    from: Amp_160
+    to: Amp_250
+    inherit: heat_pipes
+    distance: 150
+  Amp_250_to_Amp_400:
+    from: Amp_250
+    to: Amp_400
+    inherit: heat_pipes
+    distance: 150
+  Amp_400_to_VD_lem:
+    from: Amp_400
+    to: VD_Lem
+    inherit: heat_pipes
+    distance: 150
+  VD_lem_to_kVA_630:
+    from: VD_lem
+    to: kVA_630
+    inherit: heat_pipes
+    distance: 150

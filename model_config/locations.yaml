@@ -1,0 +1,155 @@
+node_groups:
+  standard_tech_list_E3B:
+    techs: {demand_electricity_E3B, demand_heatpump_E3B, supply_gas, boiler}
+  standard_tech_list_E3C:
+    techs: {demand_electricity_E3C, demand_heatpump_E3C, supply_gas, boiler}
+  standard_tech_list_E1A:
+    techs: {demand_electricity_E1A, demand_heatpump_E1A, supply_gas, boiler}
+  standard_tech_list_E2A:
+    techs: {demand_electricity_E2A, demand_heatpump_E2A, supply_gas, boiler}      
+
+nodes:
+  grid_sink:
+    techs:
+      demand_grid_sink:
+    available_area: 900
+    latitude: 52.536
+    longitude: 4.710
+  outside_connection:
+    techs:
+      supply_grid_power:
+      costly_supply:
+    available_area: 1300
+    latitude: 52.536
+    longitude: 4.715
+  N1:
+    techs:
+    available_area: 1000
+    latitude: 52.536
+    longitude: 4.716
+  N2:
+    techs:
+    available_area: 1000
+    latitude: 52.536
+    longitude: 4.718
+  N3:
+    techs:
+    available_area: 1000
+    latitude: 52.536
+    longitude: 4.718
+  Amp_125:
+    inherit: standard_tech_list_E3B
+    techs:
+      pv:
+        flow_cap_max: 354
+      demand_heat_G2C:
+      battery: 
+    available_area: 1300
+    latitude: 52.537
+    longitude: 4.718
+  Amp_160:
+    inherit: standard_tech_list_E3C
+    techs:
+      pv:
+        flow_cap_max: 80
+      demand_heat_G2A:
+      battery:
+    available_area: 1300
+    latitude: 52.538
+    longitude: 4.718
+  Amp_250:
+    inherit: standard_tech_list_E3B
+    techs:
+      pv:
+        flow_cap_max: 1612
+      demand_heat_G2C:
+      battery:
+    available_area: 900
+    latitude: 52.539
+    longitude: 4.718
+  Amp_400:
+    inherit: standard_tech_list_E3C
+    techs:
+      pv:
+        flow_cap_max: 147
+      demand_heat_G2A:
+      battery:
+    available_area: 900
+    latitude: 52.540
+    longitude: 4.718
+  VD_Lem:
+    inherit: standard_tech_list_E3C
+    techs:
+      pv:
+        flow_cap_max: 736
+      demand_heat_G2C:
+      battery:
+    available_area: 900
+    latitude: 52.541
+    longitude: 4.718
+  kVA_630:
+    inherit: standard_tech_list_E2A
+    techs:
+      pv:
+        flow_cap_max: 556
+      demand_heat_G2A:
+      battery:
+    available_area: 900
+    latitude: 52.542
+    longitude: 4.718
+  Amp_25:
+    inherit: standard_tech_list_E1A
+    techs:
+      pv:
+        flow_cap_max: 115
+      demand_heat_G2C:
+      battery:
+    available_area: 900
+    latitude: 52.535
+    longitude: 4.718
+  Amp_35:
+    inherit: standard_tech_list_E2A
+    techs:
+      pv:
+        flow_cap_max: 181
+      demand_heat_G1A:
+      battery:
+    available_area: 900
+    latitude: 52.534
+    longitude: 4.718
+  Amp_50:
+    inherit: standard_tech_list_E3B
+    techs:
+      pv:
+        flow_cap_max: 125
+      demand_heat_G1A:
+      battery:
+    available_area: 900
+    latitude: 52.533
+    longitude: 4.718
+  Amp_63:
+    inherit: standard_tech_list_E2A
+    techs:
+      pv:
+        flow_cap_max: 281
+      demand_heat_G2A:
+      battery:
+    available_area: 900
+    latitude: 52.532
+    longitude: 4.718
+  Amp_80:
+    inherit: standard_tech_list_E2A
+    techs:
+      pv:
+        flow_cap_max: 892
+      demand_heat_G2A:
+      battery:
+    available_area: 900
+    latitude: 52.531
+    longitude: 4.718
+  EV_charger:
+    techs:
+      demand_mobility:
+    available_area: 900
+    latitude: 52.538
+    longitude: 4.716
