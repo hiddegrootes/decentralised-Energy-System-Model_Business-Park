@@ -4,7 +4,7 @@ This repository contains the energy system model for the **Uitgeest Noord** proj
 
 ## Project Overview
 
-The Uitgeest Noord model is designed to explore various energy scenarios, considering factors such as energy demand, renewable energy sources, storage capacities, and grid interactions. The model aims to support decision-making for sustainable energy planning.
+The Uitgeest Noord model is designed as part of a MSc thesis project to explore various energy scenarios, considering factors such as energy demand, renewable energy sources, storage capacities, and grid interactions. The model aims to support decision-making for sustainable energy planning.
 
 ## Repository Structure
 
